@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>화살표 함수</h2>
+    <script>
+      const mul = (a, b) => a * b;
+      // js 함수의 축약형, java 람다표현식과 상당히 유사
+      // => / ->.
+      // (int a, int b) -> a * b
+      console.log(mul(10, 20));
+
+      const double = (x) => x * 2;
+      //   const double = x => x * 2; 이것도 가능
+      console.log(double(500));
+
+      const getRandom = () => Math.random();
+      console.log(getRandom());
+
+      const sumAndLog = (a, b) => {
+        const result = a + b;
+        console.log("합 :", result);
+      };
+      sumAndLog(5, 7);
+    </script>
+  </body>
+</html>
