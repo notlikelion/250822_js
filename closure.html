@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="clicker()">눌러보세요</button>
+    <script>
+      // 선언식. <-> 함수 표현식.
+      let count = 0; // 재정의 되는 건 회피를 했는데...
+      // 접근하는 걸 막을 수 없다?
+      function clicker() {
+        // console.log("눌렀다!");
+        // let count = 0; // 매번 함수를 만들 때마다 count가 재정의...
+        // 함수바깥 배치를 해서 바깥에 있는 count를 안에서 호출해서 사용.
+        alert(`눌렀다! ${++count}`);
+      }
+      // count = 100;
+      function makeClicker() {
+        let count = 0;
+        return function () {
+          alert(`눌렀다! ${++count}`);
+        };
+      }
+      const myClicker = makeClicker();
+    </script>
+    <button onclick="myClicker()">눌러보세요</button>
+  </body>
+</html>
