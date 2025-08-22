@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Java - 기본(원시) / 객체(참조) 타입
+      // int(short, byte, long) double (float), boolean, char / String, ...
+      // JavaScript
+      // number(실수, 정수) / boolean / string / null (빈 상태가 할당이 된 것) / undefined (아무것도 할당이 되지 않음)
+      // symbol, bigint ...
+      // object. -> array. error...
+      // JS -> 클래스로 객체를 만들지 않음 (JSON.)
+      let integer = 42;
+      console.log(typeof integer);
+      let double = 3.14159;
+      console.log(typeof double);
+      let boolean = true; // false
+      console.log(typeof boolean);
+      // if? truthy, falsy...
+      //   let string = 'hello';
+      let string = "hello";
+      console.log(typeof string);
+      let nullValue = null;
+      console.log(typeof nullValue);
+      // null -> typeof object 유명한 버그
+      let undef = undefined;
+      console.log(typeof undef);
+
+      // """...""" text block?
+      ``; // 원화₩ ~ 누르지 않고... 백틱.
+      // esc 아래, 1 옆에 ~₩ -> 영어로 입력해서 넣으면...
+      let name = "Lee";
+      let age = 30;
+      // ${}
+      console.log(`${name}은 ${age}살입니다.`); // 줄바꿈도 인식 됩니다
+      console.log(`
+      
+      
+      
+      줄바꿈
+      `);
+    </script>
+  </body>
+</html>
