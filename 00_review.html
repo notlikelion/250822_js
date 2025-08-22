@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var item;
+      console.log(item);
+      // var : 변수 선언.
+      var item = "hello"; // var item -> 호이스팅 발생
+      item2 = "hello2"; // var item2 -> 호이스팅.
+      var item = "hello!!"; // 재선언? -> var를 무시함.
+      console.log(item);
+      console.log(item2);
+      // let, const
+      let item3 = "hello3"; // 호이스팅 X.
+      console.log(item3); // 재선언 X. 재할당.
+      const item4 = "hello4"; // 호이스팅 X. 재선언 X. 재할당 X. 고정값, 상수. 배열/객체. (성능이랑 여러가지 개발적 이점 -> const)
+      console.log(item4);
+      // number, char x ->[string!], null, [undefined] -> 뭐만하면 얘가 나옴. 오타쳐도 나오고, 함수 설계 틀려도 나오고... boolean. 일반적 true. 0, -0, [], {}, "", null, undefined. => false.
+      console.log(item + " " + item2);
+      console.log(`item : ${item} item2 : ${item2} "'"'`);
+
+      // if, switch, for, while
+      // for-in, for-of
+      // for-of : 향상된 for문
+      const arr = [1, 2, 3];
+      for (const v of arr) {
+        console.log(v);
+      }
+      for (const key in arr) {
+        console.log(key, arr[key]);
+      }
+      const obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+      };
+      for (const key in obj) {
+        console.log(key, obj[key]);
+      }
+      for (const v of Object.values(obj)) {
+        console.log(v);
+      }
+      for (const v of Object.entries(obj)) {
+        console.log(v); // 키, 값쌍
+      }
+      for (const v of Object.keys(obj)) {
+        console.log(v);
+      }
+      // 타입 catch {}. catch (e)
+      try {
+        // JSON.parse("{...}");
+        let a;
+        console.log(a.a);
+        // catch {...}
+      } catch (e) {
+        console.error(e);
+        console.error(e.constructor.name);
+      }
+
+      // 함수 -> 클래스 밖에 존재하는 메서드.
+      // 재사용 가능한 기능 집합.
+      // 입력 -> 출력.
+      // 입력 (...) 출력 (void?)
+      console.log(add(1, 2));
+      try {
+        console.log(minus(1, 2));
+      } catch (e) {
+        console.error(e);
+      }
+      function add(a, b) {
+        return a + b;
+      } // 호이스팅 -> 함수 선언식
+      const minus = function (a, b) {
+        return a - b;
+      }; // 함수 표현식 -> 호이스팅 X.
+      const objc = {
+        add: function (a, b) {
+          return a + b;
+        },
+        minus(a, b) {
+          return a - b;
+        },
+      };
+      // 화살표 함수
+      const myFun = (a, b) => a + b;
+      const myFun2 = (a, b) => {
+        return a + b;
+      }; // x => x * 2, () => ...
+      // Java x -> ... x => ...
+
+      const obj1 = {
+        a: 1,
+        b: 11, // 프로퍼티 (필드)
+        // 함수 -> 메서드
+      };
+      class Human {
+        constructor(name) {
+          //   this.name = name;
+          this._name = name; // 접근자 사용시
+        }
+        get name() {
+          return this._name;
+        }
+        set name(newName) {
+          this._name = newName;
+        }
+        // 메서드... 다 동일.
+      } // 상속. 오버라이딩 자동이 되고, super를 지원.
+      const obj2 = new Human();
+
+      // 고차함수, map. filter, reduce, forEach...
+
+      // 구조 분해할당
+      const arr123 = [1, 2, 3];
+      const [a, b, c] = arr123;
+      console.log(a, b, c);
+      const obj123 = { a: 1, b: 2, c: 3 };
+      const { a: aa, b: bb, c: cc } = obj123;
+      console.log(aa, bb, cc);
+      const arr246 = [...arr123];
+      const obj246 = { ...obj123 };
+
+      // 가변 인자, 나머지 패러미터
+      function func(a, ...b) {
+        console.log(a, b);
+      }
+      func(1, 2, 3, 4);
+      function func2(props) {
+        const { name, age } = props;
+        console.log(name, age);
+      }
+    </script>
+  </body>
+</html>
