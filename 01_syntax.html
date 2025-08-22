@@ -9,8 +9,33 @@
     <!-- 모두가 참조해야하는 경우 (의존성, import) => head. -->
     <!-- body에 맨 끝에 둠 -> 태그로 만들어진 요소들이 모두 확실히 그려진 다음에... -->
     <script>
-      console.log("안녕!! [script]");
+      // console.log("안녕!! [script]");
+      // 별로 중요하지 않음. for(;;)
+      hello = "hello!!"; // var hello = "hello!!"; - 선언없이 할당을 해서 사용하면...
+      // 이게 실수면?
+      console.log(hello);
+      var hello = "bye!"; // 이게 정답이고
+      // var : 이전 버전의 변수의 선언 방식.
+      // let. const. es6(2015).
+      // bye = "bye!!"; // var bye...
+      // console.log(bye);
+      let bye = ""; // 우선권
+      // 자바스크립트 - 동적 타입 -> 굳이 변수를 선언할 때 타입 x, 메서드 시그니처 구성 -> 변수. return 값 타입.
+      bye = "bye bye bye";
+      console.log(bye);
+      const c = "c";
+      // c = "d";
+      let l; // 선언 후 대기 가능
+      // const cc; // 무조건 할당까지해서 초기화를 마쳐줘야함
+      // java final -> 대기해줄 수 있음.
+      // const가 '불변'이냐?
+      const arr = [];
+      arr.push(1);
+      arr.push(2);
+      console.log(arr); // js -> const.
+      // Record -> '불변' immutable
+      // mutable - mutation - mutant.
     </script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
   </body>
 </html>
