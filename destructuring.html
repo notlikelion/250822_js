@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 객체, 배열.
+      // 묶음.
+      // 배열 - 인덱스, 순서 -> 나열
+      // 객체 - 프로퍼티(내부 변수)의 이름들이 엮여있는 형태.
+      // (배열이나 객체의) 구조를 분해해서 할당(변수에 대입)
+      const arr = ["apple", "banana", "orange"];
+      const [a1, b1] = arr; // 자리를 잡은 변수에만 대입해준다
+      const [a2, b2, c2] = arr;
+      const [a3, b3, c3, d3] = arr; // 넘치는 변수에는 undefined. 선언만 된 상태로 둔다
+      const obj = {
+        a: "apple",
+        b: "banana",
+        c: "orange",
+      };
+      const { a: x1, b: y1 } = obj; // 안 부르면 ...
+      const { a: x2, b: y2, c: z2 } = obj;
+      const { a: x3, b: y3, c: z3, d: w3 } = obj; // 없는 걸 부르면 undefined.
+      // 2가지
+      // 1. return 받을 걸 풀어해칠 때
+      function fun() {
+        return [0, "Java", true]; // 내가 짠 함수가 아님. 프레임워크, 라이브러리...
+      }
+      function fun2() {
+        return {
+          index: 0,
+          name: "SQL",
+          learn: false,
+        };
+      }
+      const val = fun();
+      const [a, lang, b] = fun();
+      // const [memo, setMemo] = useState("");
+      const { learn } = fun2();
+
+      // 2. parameter로 받은 걸 풀어해칠 때
+      function fun3(gradeList, dto) {
+        const [korean, math, english] = gradeList; // [0], [1]...
+        const { name, pk, createdAt } = dto;
+      }
+    </script>
+  </body>
+</html>
