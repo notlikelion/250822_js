@@ -5,5 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // 객체
+      const obj = {};
+      // 이 내부에 있는 값을 수정
+      console.log(obj);
+      obj["name"] = "김자바";
+      obj.age = 100;
+      // 프로그래밍 -> 변수명, 함수명...
+      // 1) 숫자로 시작할 수 없음
+      // 2) _를 제외한 특수기호를 쓸 수 없음
+      // 3) 스페이스( ,공백)을 포함할 수 없음
+      obj["Hello World"] = "Bye Earth";
+      //   obj.Hello World
+      //   obj.12
+
+      console.log(obj);
+      console.log(obj.name);
+      console.log(obj["age"]);
+      console.log(obj.name2);
+      console.log(obj["age2"]);
+
+      const obj2 = {
+        name: "박SQL",
+        money: 100000,
+        // 표현식으로 넣어서...
+        hello: function () {
+          console.log("안녕!");
+          // return -> 값 undefiend.
+        },
+        // function을 뗀 선언식형태로 넣어주거나...
+        introduce() {
+          console.log(`${this.name}입니다!`);
+        },
+      };
+      obj2.hello();
+
+      // Class
+      class Person {}
+      const person = new Person();
+      person.a = "a";
+      console.log(person);
+      class Dog {
+        // Dog(...) 매개변수? -> java
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+      }
+      const dog = new Dog("멍멍이", 1);
+      console.log(dog);
+      class Cat {
+        constructor(name, age) {
+          // _ -> 기능상으로는 안막아주는데...
+          this._name = name;
+          this._age = age;
+        }
+        get name() {
+          return this._name;
+        }
+        set name(newName) {
+          this._name = newName;
+        }
+        // {} -> 표현식
+        introduce() {
+          console.log(`나는 ${this.name}이고, 나이는 ${this._age}입니다옹!`);
+        }
+        // private String name;
+        // String getName(); ...
+        // void setName(String name) {this.name...}
+      }
+      const cat = new Cat("야옹이", 2);
+      console.log(cat);
+      console.log(cat.name); // get -> getter
+      cat.name = "야야옹옹이이"; // set -> setter
+      // {프로퍼티명} -> _프로퍼티명. get,set 게터세터.
+      console.log(cat);
+      cat.introduce();
+
+      class Programmer {
+        constructor(language) {
+          this.language = language;
+        }
+        coding() {
+          console.log(`${this.language} 코딩!!!`);
+        }
+      }
+      const p = new Programmer("Java");
+      p.coding();
+
+      class CloudProgrammer extends Programmer {
+        // 알아서 오버라이딩
+        constructor() {
+          super("AWS");
+          this.grade = "A+";
+        }
+        // @Overriding -> 따로 없음. 다만 super를 통해서 생성자나 이전 메서드, 멤버변수(프로퍼티)를 호출할 수 있음.
+        coding() {
+          // super.coding
+          console.log("클라우드 코딩!");
+        }
+      }
+      // 별 요청이 없으면 생성자는 자동으로 상속...
+      const cp = new CloudProgrammer("Java");
+      cp.coding();
+      console.log(cp);
+    </script>
+  </body>
 </html>
