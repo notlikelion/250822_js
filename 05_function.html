@@ -5,5 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // function add...
+
+      // 함수(function) : 유사한 동작을 하는 코드를 묶어 놓은 코드 집합 - 프로시저, 메서드... -> return. 반환값. 또는 없다는 걸 명시적으로 기입. -> 결과를 변수 등에 할당.
+      // 프로시저 : 데이터를 기준으로 해서 특정 데이터 관련 프로세스를 일괄적 수행. -> 일반적으로 반환값. -> 결과 -> X.
+      // 메서드 : 클래스 소속된 함수.
+      // 이미 작성된 로직을 재활용. -> 함수.
+
+      // 함수 선언문
+      // function 함수명(매개변수...) {}
+      // 타입 관련 작성 X (js)
+
+      console.log(add(3, 5));
+      function add(a, b) {
+        // 함수 선언문 -> 호이스팅
+        return a + b;
+      }
+      console.log(add(2, 3));
+
+      // 함수 표현식 (let, const...)
+      // 키워드 함수명 = function (매개변수...) {}
+      //   console.log(sub(10, 7)); // ReferenceError
+      const sub = function (a, b) {
+        return a - b;
+      };
+      console.log(sub(5, 3));
+
+      // 클로져 (Closure)
+      // 상태를 유지하면서, 접근제어.
+      // JavaScript -> 접근제어자가 X.
+      // public, private.
+      // 변수를 은닉할 수 있는 수단이 없음.
+      {
+        // 범접할 수 없는 영역.
+      }
+
+      {
+      } // 안과 밖은 '매개변수'/return으로만 소통을 함.
+
+      let counter = 0;
+      counter++; // 1씩만 늘리고 싶은데...
+      counter++;
+      console.log(counter);
+      counter = 10; // 임의의 개입. 막을 수가 없어요.
+      const counterObj = { counter: 0 };
+      counterObj.counter++;
+      counterObj.counter++;
+      console.log("counterObj.counter", counterObj.counter);
+      counterObj.counter = 10;
+      console.log("counterObj.counter", counterObj.counter);
+      // 객체나 변수에 대한 접근 자체를 막을 방법이 X
+      function makeCouter() {
+        let counter = 0; // makeCounter 함수 내부 변수.
+        return function () {
+          // counter 함수 -> c
+          counter++;
+          console.log(`호출 되었네요~ ${counter}`);
+        };
+      }
+      const c = makeCouter();
+      c();
+      c();
+      c();
+      c();
+      c();
+      // 변수를 은닉, 체계화 -> 클로져
+    </script>
+  </body>
 </html>
