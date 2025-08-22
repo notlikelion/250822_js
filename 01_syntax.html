@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 모두가 참조해야하는 경우 (의존성, import) => head. -->
+    <!-- body에 맨 끝에 둠 -> 태그로 만들어진 요소들이 모두 확실히 그려진 다음에... -->
+    <script>
+      console.log("안녕!! [script]");
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
